@@ -436,3 +436,5 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
   <strong>Built with ❤️ by Prompt007dev</strong><br/>
   <sub>React · TypeScript · Vite · Supabase · TailwindCSS</sub>
 </div>
+#   A r t N e x u s  
+ 
