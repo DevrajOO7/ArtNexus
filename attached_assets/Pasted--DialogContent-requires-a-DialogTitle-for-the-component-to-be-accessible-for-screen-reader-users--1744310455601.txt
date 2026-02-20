@@ -1,0 +1,47 @@
+`DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+`DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+
+If you want to hide the &#x60;DialogTitle&#x60;, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+at t.value (https://0ceff551-8564-4717-9565-b743c8b40f6d-00-2324fafjo6jco.pike.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:17465)
+at new t (https://0ceff551-8564-4717-9565-b743c8b40f6d-00-2324fafjo6jco.pike.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:12630)
+at t.value (https://0ceff551-8564-4717-9565-b743c8b40f6d-00-2324fafjo6jco.pike.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:32766)
+at https://0ceff551-8564-4717-9565-b743c8b40f6d-00-2324fafjo6jco.pike.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:34400
+`DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+`DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+
+If you want to hide the &#x60;DialogTitle&#x60;, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+at t.value (https://0ceff551-8564-4717-9565-b743c8b40f6d-00-2324fafjo6jco.pike.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:17465)
+at new t (https://0ceff551-8564-4717-9565-b743c8b40f6d-00-2324fafjo6jco.pike.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:12630)
+at t.value (https://0ceff551-8564-4717-9565-b743c8b40f6d-00-2324fafjo6jco.pike.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:32766)
+at https://0ceff551-8564-4717-9565-b743c8b40f6d-00-2324fafjo6jco.pike.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:34400
+Error fetching marketplace items: 
+Object {code: "PGRST200", details: "Searched for a foreign key relationship between 'marketplace_items' and 'artwork_id' in the schema…", hint: null, message: "Could not find a relationship between 'marketplace_items' and 'artwork_id' in the schema cache"}
+
+Error fetching marketplace items: 
+Object {code: "PGRST200", details: "Searched for a foreign key relationship between 'marketplace_items' and 'artwork_id' in the schema…", hint: null, message: "Could not find a relationship between 'marketplace_items' and 'artwork_id' in the schema cache"}
+
+Error fetching marketplace items: 
+Object {code: "PGRST200", details: "Searched for a foreign key relationship between 'marketplace_items' and 'artwork_id' in the schema…", hint: null, message: "Could not find a relationship between 'marketplace_items' and 'artwork_id' in the schema cache"}
+
+Error fetching marketplace items: 
+Object {code: "PGRST200", details: "Searched for a foreign key relationship between 'marketplace_items' and 'artwork_id' in the schema…", hint: null, message: "Could not find a relationship between 'marketplace_items' and 'artwork_id' in the schema cache"}
