@@ -212,6 +212,14 @@ npm run preview     # Preview locally before deploy
 | `npm run lint` | Run ESLint |
 
 ---
+##Screenshots
+<img src="images_output/Art1.png" alt="ArtNexus Banner" width="100%"/>
+<img src="images_output/Art2.png" alt="ArtNexus Banner" width="100%"/>
+<img src="images_output/Art3.png" alt="ArtNexus Banner" width="100%"/>
+<img src="images_output/Art4.png" alt="ArtNexus Banner" width="100%"/>
+<img src="images_output/Art5.png" alt="ArtNexus Banner" width="100%"/>
+<img src="images_output/Art6.png" alt="ArtNexus Banner" width="100%"/>
+<img src="images_output/Art7.png" alt="ArtNexus Banner" width="100%"/>
 
 ## 🤝 Contributing
 
