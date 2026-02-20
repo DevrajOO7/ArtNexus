@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="public/og-image.png" alt="ArtNexus Banner" width="100%"/>
 
 # 🎨 ArtNexus
 
