@@ -233,6 +233,6 @@ Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
 ---
 
 <div align="center">
-  <strong>Built with ❤️ by <a href="https://github.com/YOUR_USERNAME">Prompt007dev</a></strong><br/>
+  <strong>Built with ❤️ by <a href="https://github.com/DevrajOO7">DEVRAJ</a></strong><br/>
   <sub>React · TypeScript · Vite · Supabase · TailwindCSS · WebXR</sub>
 </div>
