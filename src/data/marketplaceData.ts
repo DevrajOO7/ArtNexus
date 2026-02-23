@@ -444,5 +444,184 @@ export const marketplaceItems: MarketplaceItem[] = [
     medium: "Digital art",
     year: "2023",
     category: "digital"
+  },
+  {
+    id: "item-25",
+    title: "Neon Pulse",
+    description: "A vibrant digital artwork capturing the electric energy of a futuristic metropolis at night.",
+    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹45,500",
+    type: "digital",
+    status: "available",
+    artist: {
+      id: "artist-8",
+      name: "Ray Zhang",
+      photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Digital art",
+    year: "2024",
+    category: "digital"
+  },
+  {
+    id: "item-26",
+    title: "Silent Valley",
+    description: "An evocative oil painting of a mist-covered valley at dawn, conveying a profound sense of peace.",
+    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹185,000",
+    type: "original",
+    status: "available",
+    artist: {
+      id: "artist-1",
+      name: "Elena Rodriguez",
+      photo: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Oil on canvas",
+    dimensions: "40 × 60 inches",
+    year: "2024",
+    category: "painting"
+  },
+  {
+    id: "item-27",
+    title: "Velocity",
+    description: "A dynamic bronze abstract sculpture representing motion and the passage of time.",
+    image: "https://images.unsplash.com/photo-1544256718-3bda5c0cdbc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹250,000",
+    type: "original",
+    status: "available",
+    artist: {
+      id: "artist-4",
+      name: "Marcus Chen",
+      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Bronze",
+    dimensions: "24 × 12 × 10 inches",
+    year: "2023",
+    category: "sculpture"
+  },
+  {
+    id: "item-28",
+    title: "Midnight Symphony",
+    description: "A mixed-media exploration of sound and color, translating classical music into visual form.",
+    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹95,000",
+    type: "original",
+    status: "available",
+    artist: {
+      id: "artist-5",
+      name: "Olivia Parker",
+      photo: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Mixed media on panel",
+    dimensions: "30 × 30 inches",
+    year: "2024",
+    category: "mixed-media"
+  },
+  {
+    id: "item-29",
+    title: "Concrete Jungle",
+    description: "A striking black-and-white photograph highlighting the geometric beauty of brutalist architecture.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹65,000",
+    type: "print",
+    status: "available",
+    artist: {
+      id: "artist-2",
+      name: "James Wilson",
+      photo: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Archival pigment print",
+    dimensions: "24 × 36 inches",
+    year: "2023",
+    category: "photography"
+  },
+  {
+    id: "item-30",
+    title: "Ethereal Bloom",
+    description: "A macro photography print of a rare orchid, revealing textures and colors invisible to the naked eye.",
+    image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹45,000",
+    type: "print",
+    status: "available",
+    artist: {
+      id: "artist-2",
+      name: "James Wilson",
+      photo: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Fine art print",
+    dimensions: "20 × 20 inches",
+    year: "2024",
+    category: "photography"
+  },
+  {
+    id: "item-31",
+    title: "Lost in Translation",
+    description: "A contemporary oil painting reflecting the complexities of modern communication and digital isolation.",
+    image: "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹210,000",
+    type: "original",
+    status: "available",
+    artist: {
+      id: "artist-6",
+      name: "David Hernandez",
+      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Oil on canvas",
+    dimensions: "48 × 48 inches",
+    year: "2024",
+    category: "painting"
+  },
+  {
+    id: "item-32",
+    title: "Fractal Horizons",
+    description: "A mesmerizing digital illustration playing with recurring patterns and infinite landscapes.",
+    image: "https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹35,000",
+    type: "digital",
+    status: "available",
+    artist: {
+      id: "artist-3",
+      name: "Sophia Lee",
+      photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Digital art",
+    year: "2024",
+    category: "digital"
+  },
+  {
+    id: "item-33",
+    title: "The Observer",
+    description: "A hyper-realistic charcoal portrait exploring the intensity of human gaze and emotional depth.",
+    image: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹120,000",
+    type: "original",
+    status: "available",
+    artist: {
+      id: "artist-7",
+      name: "Amara Johnson",
+      photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Charcoal on paper",
+    dimensions: "24 × 36 inches",
+    year: "2023",
+    category: "painting"
+  },
+  {
+    id: "item-34",
+    title: "Glitch in the Matrix",
+    description: "A multi-layered digital composition using intentional distortions to question the nature of our digital reality.",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80",
+    price: "₹55,000",
+    type: "digital",
+    status: "available",
+    artist: {
+      id: "artist-8",
+      name: "Ray Zhang",
+      photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+    },
+    medium: "Digital art printed on acrylic",
+    dimensions: "30 × 40 inches",
+    year: "2024",
+    category: "digital"
   }
 ];
+

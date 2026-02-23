@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase, MarketplaceItem, Artwork, Artist } from '@/integrations/supabase/client';
+import { marketplaceItems } from '@/data/marketplaceData';
 import { IndianRupee, Search, Filter, ShoppingCart, Loader2 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { useToast } from "@/components/ui/use-toast";
@@ -20,6 +21,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 interface MarketplaceArtwork extends Artwork {
   artist: Artist;
@@ -33,6 +36,7 @@ const Marketplace = () => {
   const [category, setCategory] = useState('all');
   const [priceRange, setPriceRange] = useState('all');
   const [gridView, setGridView] = useState<'3x3' | '2x2'>('3x3');
+  const [showNFTsOnly, setShowNFTsOnly] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const { state: cartState, dispatch } = useCart();
@@ -41,39 +45,25 @@ const Marketplace = () => {
   const { data: artworks = [], isLoading, error } = useQuery({
     queryKey: ['marketplace-items'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('marketplace_items')
-        .select(`
-          *,
-          artwork:artworks (
-            *,
-            artist:artists (*)
-          )
-        `)
-        .eq('status', 'available');
+      // Use mock data for demo purposes
+      await new Promise(resolve => setTimeout(resolve, 500));
 
-      if (error) {
-        toast({
-          variant: "destructive",
-          title: "Error fetching items",
-          description: error.message
-        });
-        throw error;
-      }
-
-      return data.map((item: any) => ({
-        ...item.artwork,
-        artist: item.artwork.artist,
-        marketplace_item: item,
-        price: item.price,
-        status: item.status,
-      })) as MarketplaceArtwork[];
+      return marketplaceItems
+        .filter(item => item.status === 'available')
+        .map((item) => ({
+          ...item,
+          artist: item.artist as Artist,
+          marketplace_item: item as any,
+          price: item.price,
+          status: item.status,
+          created_at: new Date(item.year).toISOString(),
+        })) as unknown as MarketplaceArtwork[];
     }
   });
 
   // Sort artworks by date (newest first)
   const sortedArtworks = [...artworks].sort((a, b) =>
-    new Date(b.created_at || '').getTime() - new Date(a.created_at || '').getTime()
+    new Date(b.created_at || b.year || '').getTime() - new Date(a.created_at || a.year || '').getTime()
   );
 
   // Filter artworks based on search, category, and price range
@@ -90,7 +80,11 @@ const Marketplace = () => {
       (priceRange === '50000-100000' && price > 50000 && price <= 100000) ||
       (priceRange === '100000+' && price > 100000);
 
-    return matchesSearch && matchesCategory && matchesPrice;
+    // Simulate NFT tag (pseudo-random based on ID length for consistency)
+    const isMockNFT = artwork.id.length % 3 === 0;
+    const matchesNFT = !showNFTsOnly || isMockNFT;
+
+    return matchesSearch && matchesCategory && matchesPrice && matchesNFT;
   });
 
   const uniqueCategories = Array.from(new Set(artworks.map(item => item.category || 'Uncategorized')));
@@ -168,6 +162,18 @@ const Marketplace = () => {
                 <SelectItem value="100000+">Above ₹1,00,000</SelectItem>
               </SelectContent>
             </Select>
+
+            <div className="flex items-center space-x-2 bg-background/50 p-2 rounded-md border">
+              <Switch
+                id="nft-mode"
+                checked={showNFTsOnly}
+                onCheckedChange={setShowNFTsOnly}
+              />
+              <Label htmlFor="nft-mode" className="font-medium cursor-pointer flex items-center gap-2">
+                NFT Assets
+                <span className="text-xs bg-artnexus-purple/10 text-artnexus-purple px-2 py-0.5 rounded-full">Web3</span>
+              </Label>
+            </div>
           </div>
         </div>
 
@@ -198,6 +204,11 @@ const Marketplace = () => {
                 >
                   {artwork.status === 'sold' ? 'Sold' : 'Available'}
                 </Badge>
+                {artwork.id.length % 3 === 0 && (
+                  <Badge className="absolute top-2 left-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white border-none shadow-md">
+                    NFT
+                  </Badge>
+                )}
               </div>
               <CardContent className="p-4">
                 <div className="flex justify-between items-start mb-2">

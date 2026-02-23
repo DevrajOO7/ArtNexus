@@ -27,7 +27,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h4 className="font-medium text-lg mb-4">Explore</h4>
             <ul className="space-y-2 text-muted-foreground">
@@ -48,7 +48,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-medium text-lg mb-4">Join</h4>
             <ul className="space-y-2 text-muted-foreground">
@@ -69,7 +69,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-medium text-lg mb-4">Information</h4>
             <ul className="space-y-2 text-muted-foreground">
@@ -91,9 +91,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t mt-12 pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} ArtNexus. All rights reserved.</p>
+          <p>&copy; 2025 ArtNexus. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+import { useCart } from '@/contexts/CartContext';
 import { Separator } from '@/components/ui/separator';
 import {
   Heart,
@@ -29,6 +30,7 @@ const ArtworkDetail = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const [commentText, setCommentText] = useState('');
+  const { dispatch } = useCart();
 
   useEffect(() => {
     if (id) {
@@ -243,6 +245,17 @@ const ArtworkDetail = () => {
                     {artwork.status.charAt(0).toUpperCase() + artwork.status.slice(1)}
                   </span>
                 </div>
+
+                {/* Mock NFT indicator */}
+                {artwork.id.length % 3 === 0 && (
+                  <div className="flex items-center text-sm">
+                    <span className="text-muted-foreground">Blockchain: </span>
+                    <span className="ml-auto flex items-center gap-1 text-indigo-500 font-medium">
+                      Verified NFT
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20" /><path d="m17 5-5-3-5 3v14l5 3 5-3Z" /></svg>
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="mt-6">
@@ -255,6 +268,30 @@ const ArtworkDetail = () => {
                     {artwork.category}
                   </Link>
                 </div>
+              </div>
+
+              {/* Purchase Actions */}
+              <div className="mt-8 flex flex-col gap-3">
+                <Button
+                  className="w-full bg-artnexus-purple hover:bg-artnexus-purple/90"
+                  size="lg"
+                  disabled={artwork.status === 'sold'}
+                  onClick={() => dispatch({ type: 'ADD_TO_CART', payload: artwork as any })}
+                >
+                  Add to Cart
+                </Button>
+
+                {artwork.id.length % 3 === 0 && (
+                  <Button
+                    variant="outline"
+                    className="w-full border-indigo-500 text-indigo-600 hover:bg-indigo-50"
+                    size="lg"
+                    disabled={artwork.status === 'sold'}
+                    onClick={() => alert('Demo: Redirecting to Web3 Wallet Provider...')}
+                  >
+                    Mint / Buy with Crypto
+                  </Button>
+                )}
               </div>
             </div>
 
