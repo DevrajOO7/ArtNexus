@@ -220,7 +220,7 @@ http://localhost:8080
 
 # 🖼 Screenshots
 
-```
+
 <img src="images_output/Art1.png" alt="ArtNexus Banner" width="100%"/>
 <img src="images_output/Art2.png" alt="ArtNexus Banner" width="100%"/>
 <img src="images_output/Art3.png" alt="ArtNexus Banner" width="100%"/>
@@ -228,7 +228,7 @@ http://localhost:8080
  <img src="images_output/Art5.png" alt="ArtNexus Banner" width="100%"/>
  <img src="images_output/Art6.png" alt="ArtNexus Banner" width="100%"/>
  <img src="images_output/Art7.png" alt="ArtNexus Banner" width="100%"/>
-```
+
 
 ---
 
