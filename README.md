@@ -1,4 +1,3 @@
-Here is your **final clean, production-ready `README.md` file** for ArtNexus — properly structured, polished, and ready to paste directly into GitHub.
 
 ---
 
@@ -222,13 +221,13 @@ http://localhost:8080
 # 🖼 Screenshots
 
 ```
-/images_output/Art1.png
-/images_output/Art2.png
-/images_output/Art3.png
-/images_output/Art4.png
-/images_output/Art5.png
-/images_output/Art6.png
-/images_output/Art7.png
+<img src="images_output/Art1.png" alt="ArtNexus Banner" width="100%"/>
+<img src="images_output/Art2.png" alt="ArtNexus Banner" width="100%"/>
+<img src="images_output/Art3.png" alt="ArtNexus Banner" width="100%"/>
+ <img src="images_output/Art4.png" alt="ArtNexus Banner" width="100%"/>
+ <img src="images_output/Art5.png" alt="ArtNexus Banner" width="100%"/>
+ <img src="images_output/Art6.png" alt="ArtNexus Banner" width="100%"/>
+ <img src="images_output/Art7.png" alt="ArtNexus Banner" width="100%"/>
 ```
 
 ---
