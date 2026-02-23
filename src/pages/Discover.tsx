@@ -13,6 +13,7 @@ import CategoryFilter from '@/components/CategoryFilter';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Sparkles } from 'lucide-react';
 import {
   Pagination,
   PaginationContent,
@@ -169,6 +170,13 @@ const Discover = () => {
 
   // Destructure data with fallbacks
   const { artworks = [], count = 0, totalPages = 1 } = data || {};
+
+  // Mock AI Recommendations
+  const recommendedArtworks = useMemo(() => {
+    // Shuffle and pick 4 items to simulate AI recommendations based on user "profile"
+    const shuffled = [...artworks].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 4);
+  }, [artworks]);
 
   // Handle category selection
   const handleCategorySelect = (category: string | null) => {
@@ -458,6 +466,35 @@ const Discover = () => {
             </div>
           )}
         </div>
+
+        {/* AI Recommendations Section */}
+        {!isLoading && artworks.length > 0 && currentPage === 1 && !searchQuery && !selectedCategory && (
+          <div className="mb-12">
+            <div className="flex items-center gap-2 mb-6">
+              <Sparkles className="h-5 w-5 text-artnexus-purple" />
+              <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-artnexus-purple to-artnexus-teal">
+                Recommended For You
+              </h2>
+              <span className="text-xs px-2 py-1 rounded-full bg-artnexus-purple/10 text-artnexus-purple ml-2 border border-artnexus-purple/20">
+                AI Powered
+              </span>
+            </div>
+            <div className={`grid gap-6 ${isGridView
+              ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+              : "grid-cols-1 md:grid-cols-2"
+              }`}>
+              {recommendedArtworks.map((artwork) => (
+                <ArtCard
+                  key={`rec-${artwork.id}`}
+                  artwork={artwork}
+                  artist={artwork.artist}
+                  isExpanded={!isGridView}
+                />
+              ))}
+            </div>
+            <div className="mt-8 border-b border-gray-200 dark:border-gray-800" />
+          </div>
+        )}
 
         {/* Results section */}
         <div id="results-section">

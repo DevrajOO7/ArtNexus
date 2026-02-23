@@ -32,8 +32,10 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Search, Menu, X, User, LogOut, LayoutDashboard } from 'lucide-react';
+import { Search, Menu, X, User, LogOut, LayoutDashboard, Globe } from 'lucide-react';
 import Logo from '@/components/Logo';
+import NotificationDropdown from './NotificationDropdown';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const linkClasses = "text-sm font-medium hover:text-artnexus-purple transition-colors";
 
@@ -46,6 +48,7 @@ const Navbar = () => {
   const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>('light');
   const isMobile = useIsMobile();
   const { user, signOut } = useAuth();
+  const { t, language, setLanguage } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
@@ -67,28 +70,43 @@ const Navbar = () => {
           <div className="flex items-center">
             <Logo size="small" className="mr-2" />
             <nav className="hidden md:flex items-center space-x-3 ml-2">
-              <Link to="/" className={linkClasses}>Home</Link>
-              <Link to="/discover" className={linkClasses}>Discover</Link>
-              <Link to="/marketplace" className={linkClasses}>Marketplace</Link>
+              <Link to="/" className={linkClasses}>{t('nav.home')}</Link>
+              <Link to="/discover" className={linkClasses}>{t('nav.discover')}</Link>
+              <Link to="/marketplace" className={linkClasses}>{t('nav.marketplace')}</Link>
               <Link to="/ar-view/1" className={linkClasses}>Wall Preview</Link>
-              <Link to="/ar-gallery" className={linkClasses}>AR Experience</Link>
+              <Link to="/ar-gallery" className={linkClasses}>{t('nav.arExperience')}</Link>
               <Link to="/ar-models" className={linkClasses}>3D Viewer</Link>
-              <Link to="/events" className={linkClasses}>Events</Link>
-              <Link to="/art-classes" className={linkClasses}>Classes</Link>
+              <Link to="/events" className={linkClasses}>{t('nav.events')}</Link>
+              <Link to="/art-classes" className={linkClasses}>{t('nav.classes')}</Link>
             </nav>
           </div>
 
           <div className="flex items-center space-x-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="px-2" aria-label="Switch Language">
+                  <Globe className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLanguage('en')} className={language === 'en' ? 'bg-muted' : ''}>English</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('fr')} className={language === 'fr' ? 'bg-muted' : ''}>Français</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('es')} className={language === 'es' ? 'bg-muted' : ''}>Español</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('ja')} className={language === 'ja' ? 'bg-muted' : ''}>日本語</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsSearchDialogOpen(true)}
               className="px-2"
+              aria-label="Search"
             >
               <Search className="h-4 w-4" />
             </Button>
 
-            <Button variant="ghost" size="sm" onClick={toggleTheme}>
+            <Button variant="ghost" size="sm" onClick={toggleTheme} aria-label="Toggle theme">
               {mounted && (
                 currentTheme === 'light' ? (
                   <Sun className="h-[1.2rem] w-[1.2rem]" />
@@ -98,6 +116,8 @@ const Navbar = () => {
               )}
               <span className="sr-only">Toggle theme</span>
             </Button>
+
+            <NotificationDropdown />
 
             {!isMobile && (
               <>
@@ -155,7 +175,7 @@ const Navbar = () => {
 
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="md:hidden">
+                <Button variant="ghost" size="sm" className="md:hidden" aria-label="Toggle menu">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>

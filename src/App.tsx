@@ -13,6 +13,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from "sonner";
 import { CartProvider } from './contexts/CartContext';
 import { AuthProvider } from './contexts/AuthContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 import Index from '@/pages/Index';
 import Discover from '@/pages/Discover';
@@ -33,8 +34,10 @@ import ArtClasses from '@/pages/ArtClasses';
 import ClassDetail from '@/pages/ClassDetail';
 import Performances from '@/pages/Performances';
 import NotFound from '@/pages/NotFound';
+import Dashboard from '@/pages/Dashboard';
 
 import ErrorBoundary from './components/ErrorBoundary';
+import DeveloperCredit from './components/DeveloperCredit';
 
 const queryClient = new QueryClient();
 
@@ -42,36 +45,40 @@ function App() {
   return (
     <ThemeProvider defaultTheme="light" storageKey="artnexus-theme">
       <ErrorBoundary>
-        <CartProvider>
-          <BrowserRouter>
-            <AuthProvider>
-              <QueryClientProvider client={queryClient}>
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/discover" element={<Discover />} />
-                  <Route path="/marketplace" element={<Marketplace />} />
-                  <Route path="/collections" element={<Collections />} />
-                  <Route path="/ar-view/:id" element={<ARView />} />
-                  <Route path="/ar-models" element={<ARModels />} />
-                  <Route path="/ar-gallery" element={<ARGallery />} />
-                  <Route path="/ar-webxr" element={<ARWebXR />} />
-                  <Route path="/artwork/:id" element={<ArtworkDetail />} />
-                  <Route path="/artist/:id" element={<ArtistProfile />} />
-                  <Route path="/login" element={<Auth />} />
-                  <Route path="/profile" element={<Profile />} />
-                  <Route path="/events" element={<Events />} />
-                  <Route path="/forum" element={<Forum />} />
-                  <Route path="/forum/:id" element={<ForumTopic />} />
-                  <Route path="/art-classes" element={<ArtClasses />} />
-                  <Route path="/class/:id" element={<ClassDetail />} />
-                  <Route path="/performances" element={<Performances />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-                <Toaster />
-              </QueryClientProvider>
-            </AuthProvider>
-          </BrowserRouter>
-        </CartProvider>
+        <LanguageProvider>
+          <CartProvider>
+            <BrowserRouter>
+              <AuthProvider>
+                <QueryClientProvider client={queryClient}>
+                  <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/discover" element={<Discover />} />
+                    <Route path="/marketplace" element={<Marketplace />} />
+                    <Route path="/collections" element={<Collections />} />
+                    <Route path="/ar-view/:id" element={<ARView />} />
+                    <Route path="/ar-models" element={<ARModels />} />
+                    <Route path="/ar-gallery" element={<ARGallery />} />
+                    <Route path="/ar-webxr" element={<ARWebXR />} />
+                    <Route path="/artwork/:id" element={<ArtworkDetail />} />
+                    <Route path="/artist/:id" element={<ArtistProfile />} />
+                    <Route path="/login" element={<Auth />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/events" element={<Events />} />
+                    <Route path="/forum" element={<Forum />} />
+                    <Route path="/forum/:id" element={<ForumTopic />} />
+                    <Route path="/art-classes" element={<ArtClasses />} />
+                    <Route path="/class/:id" element={<ClassDetail />} />
+                    <Route path="/performances" element={<Performances />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                  <DeveloperCredit />
+                  <Toaster />
+                </QueryClientProvider>
+              </AuthProvider>
+            </BrowserRouter>
+          </CartProvider>
+        </LanguageProvider>
       </ErrorBoundary>
     </ThemeProvider>
   );

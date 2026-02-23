@@ -1,90 +1,103 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { marketplaceItems } from '@/data/marketplaceData';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { UserCircle, Settings, BookOpen, ShoppingBag, Clock, Heart } from 'lucide-react';
 
 const Profile = () => {
-  const [activeTab, setActiveTab] = useState('account');
-  
-  // Get user profile from Supabase
+  const [searchParams] = useSearchParams();
+  const initialTab = searchParams.get('tab') || 'account';
+  const [activeTab, setActiveTab] = useState(initialTab);
+
+  useEffect(() => {
+    const tab = searchParams.get('tab');
+    if (tab) {
+      setActiveTab(tab);
+    }
+  }, [searchParams]);
+
+  // Mock Profile Data for Demo
   const { data: profile, isLoading: isProfileLoading } = useQuery({
     queryKey: ['profile'],
     queryFn: async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      if (!session) return null;
-      
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', session.user.id)
-        .single();
-        
-      if (error) throw error;
-      return data;
+      await new Promise(resolve => setTimeout(resolve, 300));
+      return {
+        id: '1',
+        username: 'DEVRAJ_Admin',
+        bio: 'Art lover, collector, and digital creator.',
+        avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+        created_at: new Date('2023-01-15').toISOString(),
+      };
     }
   });
 
-  // Liked artworks query
+  // Mock Liked Artworks
   const { data: likedArtworks, isLoading: isLikedLoading } = useQuery({
     queryKey: ['liked-artworks'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('artworks')
-        .select(`
-          *,
-          artists:artist_id(name, id)
-        `)
-        .limit(5);
-        
-      if (error) throw error;
-      return data;
+      await new Promise(resolve => setTimeout(resolve, 400));
+      return marketplaceItems.slice(0, 4).map(item => ({
+        ...item,
+        artists: item.artist
+      }));
     }
   });
-  
-  // Purchased items query
+
+  // Mock Purchased Items
   const { data: purchasedItems, isLoading: isPurchasedLoading } = useQuery({
     queryKey: ['purchased-items'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('marketplace_items')
-        .select(`
-          *,
-          artworks:artwork_id(title, image, id)
-        `)
-        .eq('status', 'sold')
-        .limit(5);
-        
-      if (error) throw error;
-      return data;
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      const localPurchases = JSON.parse(localStorage.getItem('mockPurchases') || '[]');
+
+      return [
+        ...localPurchases,
+        {
+          id: 'purchase-demo-1',
+          price: marketplaceItems[5].price,
+          artwork_id: marketplaceItems[5].id,
+          artworks: marketplaceItems[5]
+        }
+      ];
     }
   });
-  
-  // Enrolled classes query
+
+  // Mock Enrolled Classes
   const { data: enrolledClasses, isLoading: isClassesLoading } = useQuery({
     queryKey: ['enrolled-classes'],
     queryFn: async () => {
-      const { data, error } = await supabase
-        .from('art_classes')
-        .select('*')
-        .limit(5);
-        
-      if (error) throw error;
-      return data;
+      await new Promise(resolve => setTimeout(resolve, 600));
+      return [
+        {
+          id: 'class-1',
+          title: 'Digital Painting Masterclass',
+          level: 'Intermediate',
+          duration: '6 weeks',
+          image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        },
+        {
+          id: 'class-2',
+          title: 'Intro to 3D Art',
+          level: 'Beginner',
+          duration: '4 weeks',
+          image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        }
+      ];
     }
   });
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Profile sidebar */}
@@ -93,9 +106,9 @@ const Profile = () => {
               <CardHeader className="text-center">
                 <div className="mx-auto mb-4">
                   {profile ? (
-                    <img 
-                      src={profile.avatar || "https://via.placeholder.com/150"} 
-                      alt="Profile" 
+                    <img
+                      src={profile.avatar || "https://via.placeholder.com/150"}
+                      alt="Profile"
                       className="w-24 h-24 rounded-full mx-auto border-4 border-white shadow-md"
                     />
                   ) : (
@@ -116,7 +129,7 @@ const Profile = () => {
                     Edit Profile
                   </Link>
                 </Button>
-                
+
                 <div className="mt-6 space-y-1">
                   <Button
                     variant="ghost"
@@ -162,7 +175,7 @@ const Profile = () => {
               </CardContent>
             </Card>
           </div>
-          
+
           {/* Main content */}
           <div className="w-full md:w-3/4">
             <div className={activeTab === 'account' ? 'block' : 'hidden'}>
@@ -202,7 +215,7 @@ const Profile = () => {
                 </CardContent>
               </Card>
             </div>
-            
+
             <div className={activeTab === 'classes' ? 'block' : 'hidden'}>
               <Card>
                 <CardHeader>
@@ -217,14 +230,14 @@ const Profile = () => {
                   ) : enrolledClasses && enrolledClasses.length > 0 ? (
                     <div className="space-y-4">
                       {enrolledClasses.map((cls) => (
-                        <Link 
-                          key={cls.id} 
+                        <Link
+                          key={cls.id}
                           to={`/classes/${cls.id}`}
                           className="flex items-center p-3 rounded-lg hover:bg-muted"
                         >
-                          <img 
-                            src={cls.image} 
-                            alt={cls.title} 
+                          <img
+                            src={cls.image}
+                            alt={cls.title}
                             className="w-16 h-16 object-cover rounded-md mr-4"
                           />
                           <div>
@@ -247,7 +260,7 @@ const Profile = () => {
                 </CardContent>
               </Card>
             </div>
-            
+
             <div className={activeTab === 'purchases' ? 'block' : 'hidden'}>
               <Card>
                 <CardHeader>
@@ -262,14 +275,14 @@ const Profile = () => {
                   ) : purchasedItems && purchasedItems.length > 0 ? (
                     <div className="space-y-4">
                       {purchasedItems.map((item) => (
-                        <Link 
-                          key={item.id} 
+                        <Link
+                          key={item.id}
                           to={`/artwork/${item.artwork_id}`}
                           className="flex items-center p-3 rounded-lg hover:bg-muted"
                         >
-                          <img 
-                            src={item.artworks.image} 
-                            alt={item.artworks.title} 
+                          <img
+                            src={item.artworks.image}
+                            alt={item.artworks.title}
                             className="w-16 h-16 object-cover rounded-md mr-4"
                           />
                           <div>
@@ -292,7 +305,7 @@ const Profile = () => {
                 </CardContent>
               </Card>
             </div>
-            
+
             <div className={activeTab === 'favorites' ? 'block' : 'hidden'}>
               <Card>
                 <CardHeader>
@@ -307,14 +320,14 @@ const Profile = () => {
                   ) : likedArtworks && likedArtworks.length > 0 ? (
                     <div className="space-y-4">
                       {likedArtworks.map((artwork) => (
-                        <Link 
-                          key={artwork.id} 
+                        <Link
+                          key={artwork.id}
                           to={`/artwork/${artwork.id}`}
                           className="flex items-center p-3 rounded-lg hover:bg-muted"
                         >
-                          <img 
-                            src={artwork.image} 
-                            alt={artwork.title} 
+                          <img
+                            src={artwork.image}
+                            alt={artwork.title}
                             className="w-16 h-16 object-cover rounded-md mr-4"
                           />
                           <div>
@@ -337,7 +350,7 @@ const Profile = () => {
                 </CardContent>
               </Card>
             </div>
-            
+
             <div className={activeTab === 'activity' ? 'block' : 'hidden'}>
               <Card>
                 <CardHeader>
@@ -354,7 +367,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="mt-auto">
         <Footer />
       </div>

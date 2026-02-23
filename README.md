@@ -1,5 +1,6 @@
-<div align="center">
+# ArtNexus 🎨
 
+<<<<<<< HEAD
 
 # 🎨 ArtNexus
 
@@ -15,74 +16,99 @@
 [🌐 Live Demo](#) &nbsp;·&nbsp; [🐛 Report Bug](../../issues/new?template=bug_report.md) &nbsp;·&nbsp; [✨ Request Feature](../../issues/new?template=feature_request.md)
 
 </div>
+=======
+Welcome to **ArtNexus** - a next-generation platform bridging the gap between traditional art and cutting-edge technology. Experience, collect, and interact with art like never before through our immersive features including Augmented Reality (AR) visualization, an interactive digital marketplace, AI-powered recommendations, and real-time artist analytics.
+>>>>>>> 8a71776 (Production ready release)
 
 ---
 
-## � About ArtNexus
+## 🌟 Key Features
 
-**ArtNexus** is a full-stack web platform that connects artists, collectors, and art lovers through a seamless digital experience. It combines a beautiful artwork gallery, a real-money marketplace, live events, art classes, a community forum, and — most uniquely — an **Augmented Reality (AR) viewer** that lets you place artworks inside your physical room before buying.
+1. **Immersive AR Experiences**
+   - **Wall Preview**: Visualize how artworks look on your own walls in real-time.
+   - **3D Model Viewer**: Inspect sculptures and digital 3D models from every angle.
+   - **AR Gallery Tour**: Walk through completely customized virtual museum spaces.
 
-Built with a modern React + TypeScript frontend powered by Supabase as a backend-as-a-service, ArtNexus is fast, responsive, and runs entirely in the browser with no separate backend server to manage.
+2. **Smart Digital Marketplace**
+   - Curated fine arts, digital media, and simulated NFT assets side-by-side.
+   - Advanced search, price filtering, and category sorting.
+   - Full Shopping Cart & local-persistence Checkout system (orders appear in your Profile!).
 
----
+3. **AI-Powered Discovery Engine**
+   - An intelligent "Recommended For You" section that curates bespoke artwork suggestions dynamically in the Discovery tab.
 
-## ✨ Features
+4. **Artist Analytics Dashboard**
+   - Comprehensive insights displaying generated revenue through interactive Recharts (Bar & Area graphs) and Key Performance Indicators (KPIs) for artists.
 
-- 🖼️ **Art Discovery** — Browse thousands of artworks with search and category filters
-- 🛒 **Marketplace** — Buy and sell original artworks with a full shopping cart
-- 🥽 **AR Viewer** — Place artworks in your room using WebXR Augmented Reality
-- 🗂️ **Collections** — Create and curate personal art collections
-- 👤 **Artist Profiles** — Portfolio pages for individual artists
-- 🎭 **Events & Performances** — Discover upcoming art exhibitions and live shows
-- 📚 **Art Classes** — Browse and enroll in online art courses
-- 💬 **Community Forum** — Discuss and share with fellow art enthusiasts
-- 🌙 **Dark / Light Mode** — Full theme support with system preference detection
-- 🔐 **Authentication** — Secure sign-up/login via Supabase Auth
+5. **Multi-Language Support (i18n)**
+   - Seamless, un-refreshed switching between English (EN), French (FR), Spanish (ES), and Japanese (JA).
 
----
-
-## 🛠️ Tech Stack
-
-| Area | Technology |
-|---|---|
-| Framework | React 18 + TypeScript 5 |
-| Build Tool | Vite 5 |
-| Styling | Tailwind CSS 3 + shadcn/ui + Radix UI |
-| Animation | Framer Motion |
-| Routing | React Router v6 |
-| Server State | TanStack React Query |
-| Forms | React Hook Form + Zod |
-| Backend | Supabase (PostgreSQL, Auth, Storage) |
-| AR / 3D | @google/model-viewer + WebXR API |
+6. **Real-Time Social Elements**
+   - Simulated live push notifications (e.g. "Your artwork just sold!").
+   - Profile configurations showcasing purchased artwork, favorited pieces, and enrolled art masterclasses.
 
 ---
 
-## 📁 Project Structure
+## 💻 Tech Stack
 
-```
-ArtNexus/
-├── public/
-│   ├── models/           # .glb 3D model files for AR viewing
-│   └── lovable-uploads/  # Artwork thumbnail images
-├── src/
-│   ├── components/       # Reusable UI components
-│   │   ├── ar/           # AR-specific components
-│   │   └── ui/           # shadcn/ui base components
-│   ├── contexts/         # React context (Auth, Cart)
-│   ├── data/             # Static / mock data
-│   ├── hooks/            # Custom React hooks
-│   ├── integrations/     # Supabase client & types
-│   ├── pages/            # Page-level route components
-│   ├── App.tsx           # Root app with routing
-│   └── main.tsx          # Entry point
-├── .env.example          # Required environment variables
-├── netlify.toml          # Netlify deployment config
-├── vite.config.ts        # Vite configuration
-└── package.json
-```
+- **Framework**: [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Components**: [shadcn/ui](https://ui.shadcn.com/) (Radix Primitives)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Data Fetching / State**: [TanStack React Query](https://tanstack.com/query/latest) & React Context API
+- **Charts**: [Recharts](https://recharts.org/)
 
 ---
 
+## 🚀 Getting Started Locally
+
+To run the project locally, ensure you have Node.js installed, then follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repo-url>
+   cd ArtNexus
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Spin up the development server:**
+   ```bash
+   npm run dev
+   ```
+   > The app will typically be available at `http://localhost:8080`.
+
+---
+
+## 🌍 Deployment Guide
+
+This project is perfectly optimized to be deployed to highly scalable Edge networks for free!
+
+### Option 1: Vercel (Recommended for Best Performance)
+1. Push this repository to your GitHub account.
+2. Log into [Vercel](https://vercel.com).
+3. Click **Add New Project** and select your `ArtNexus` repository.
+4. Vercel will automatically detect that you are using Vite!
+5. Leave the default settings (`Framework Preset: Vite`, `Build Command: npm run build`, `Output Directory: dist`) and click **Deploy**.
+
+### Option 2: Netlify
+1. Push this repository to your GitHub account.
+2. Log into [Netlify](https://netlify.com).
+3. Click **Add new site** -> **Import an existing project**.
+4. Authorize your GitHub and select the `ArtNexus` repo.
+5. Ensure the settings are:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+6. Click **Deploy site**.
+
+---
+
+<<<<<<< HEAD
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -243,3 +269,6 @@ Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
   <strong>Built with ❤️ by <a href="https://github.com/DevrajOO7">DEVRAJ</a></strong><br/>
   <sub>React · TypeScript · Vite · Supabase · TailwindCSS · WebXR</sub>
 </div>
+=======
+*Developed by DEVRAJ &copy; 2025*
+>>>>>>> 8a71776 (Production ready release)

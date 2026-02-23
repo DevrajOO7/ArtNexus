@@ -26,12 +26,26 @@ export const Checkout = ({ open, onClose }: CheckoutProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically integrate with a payment gateway
-    // For now, we'll just show a success message
+
+    // Save to mock storage for demo purposes
+    const existingPurchases = JSON.parse(localStorage.getItem('mockPurchases') || '[]');
+    const newPurchases = state.items.map(item => ({
+      id: `purchase-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      price: item.price,
+      artwork_id: item.id,
+      artworks: {
+        title: item.title,
+        image: item.image,
+        id: item.id
+      }
+    }));
+
+    localStorage.setItem('mockPurchases', JSON.stringify([...newPurchases, ...existingPurchases]));
+
     toast.success("Order placed successfully!");
     dispatch({ type: 'CLEAR_CART' });
     onClose();
-    navigate('/marketplace');
+    navigate('/profile?tab=purchases');
   };
 
   return (
@@ -40,24 +54,24 @@ export const Checkout = ({ open, onClose }: CheckoutProps) => {
         <DrawerHeader>
           <DrawerTitle>Checkout</DrawerTitle>
         </DrawerHeader>
-        
+
         <form onSubmit={handleSubmit} className="p-4 space-y-6">
           <div className="space-y-4">
             <div>
               <Label htmlFor="name">Full Name</Label>
               <Input id="name" required />
             </div>
-            
+
             <div>
               <Label htmlFor="email">Email</Label>
               <Input id="email" type="email" required />
             </div>
-            
+
             <div>
               <Label htmlFor="phone">Phone</Label>
               <Input id="phone" type="tel" required />
             </div>
-            
+
             <div>
               <Label htmlFor="address">Shipping Address</Label>
               <Input id="address" required />
