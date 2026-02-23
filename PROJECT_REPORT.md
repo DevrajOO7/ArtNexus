@@ -1,7 +1,7 @@
 # Project Report: ArtNexus
 
-**Date:** February 2026  
-**Author:** Prompt007dev  
+**Date:** March 2025  
+**Author:** Devraj 
 **Version:** 1.0.0  
 **Project Type:** Full-Stack Web Application (Frontend + BaaS)
 
