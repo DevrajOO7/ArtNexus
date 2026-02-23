@@ -1,123 +1,78 @@
-# ArtNexus 🎨
+Here is your **final clean, production-ready `README.md` file** for ArtNexus — properly structured, polished, and ready to paste directly into GitHub.
 
-<<<<<<< HEAD
+---
 
 # 🎨 ArtNexus
 
 **A Modern Art Discovery, Marketplace & Augmented Reality Platform**
 
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=white)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com/)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
-
-[🌐 Live Demo](#) &nbsp;·&nbsp; [🐛 Report Bug](../../issues/new?template=bug_report.md) &nbsp;·&nbsp; [✨ Request Feature](../../issues/new?template=feature_request.md)
-
-</div>
-=======
-Welcome to **ArtNexus** - a next-generation platform bridging the gap between traditional art and cutting-edge technology. Experience, collect, and interact with art like never before through our immersive features including Augmented Reality (AR) visualization, an interactive digital marketplace, AI-powered recommendations, and real-time artist analytics.
->>>>>>> 8a71776 (Production ready release)
+ArtNexus is a next-generation platform bridging traditional art and cutting-edge technology. Discover, collect, and interact with art like never before through immersive AR visualization, a smart digital marketplace, AI-powered recommendations, and real-time artist analytics.
 
 ---
 
-## 🌟 Key Features
+## 🌟 Features
 
-1. **Immersive AR Experiences**
-   - **Wall Preview**: Visualize how artworks look on your own walls in real-time.
-   - **3D Model Viewer**: Inspect sculptures and digital 3D models from every angle.
-   - **AR Gallery Tour**: Walk through completely customized virtual museum spaces.
+### 🎯 Immersive AR Experiences
 
-2. **Smart Digital Marketplace**
-   - Curated fine arts, digital media, and simulated NFT assets side-by-side.
-   - Advanced search, price filtering, and category sorting.
-   - Full Shopping Cart & local-persistence Checkout system (orders appear in your Profile!).
+* **Wall Preview** – Visualize artworks on your wall in real time
+* **3D Model Viewer** – Rotate and inspect sculptures from every angle
+* **AR Gallery Tour** – Walk through customizable virtual museum spaces
 
-3. **AI-Powered Discovery Engine**
-   - An intelligent "Recommended For You" section that curates bespoke artwork suggestions dynamically in the Discovery tab.
+### 🛍 Smart Digital Marketplace
 
-4. **Artist Analytics Dashboard**
-   - Comprehensive insights displaying generated revenue through interactive Recharts (Bar & Area graphs) and Key Performance Indicators (KPIs) for artists.
+* Fine art, digital media, and simulated NFT assets
+* Advanced filtering, categories, and search
+* Persistent shopping cart & order history
 
-5. **Multi-Language Support (i18n)**
-   - Seamless, un-refreshed switching between English (EN), French (FR), Spanish (ES), and Japanese (JA).
+### 🤖 AI-Powered Discovery
 
-6. **Real-Time Social Elements**
-   - Simulated live push notifications (e.g. "Your artwork just sold!").
-   - Profile configurations showcasing purchased artwork, favorited pieces, and enrolled art masterclasses.
+* Personalized “Recommended For You” engine
+* Dynamic artwork suggestions
 
----
+### 📊 Artist Analytics Dashboard
 
-## 💻 Tech Stack
+* Revenue tracking & KPIs
+* Interactive charts (Bar & Area graphs via Recharts)
 
-- **Framework**: [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Components**: [shadcn/ui](https://ui.shadcn.com/) (Radix Primitives)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Data Fetching / State**: [TanStack React Query](https://tanstack.com/query/latest) & React Context API
-- **Charts**: [Recharts](https://recharts.org/)
+### 🌍 Multi-Language Support
+
+* English (EN)
+* French (FR)
+* Spanish (ES)
+* Japanese (JA)
+
+### 🔔 Real-Time Social Features
+
+* Live sale notifications
+* Profile pages with favorites, purchases & collections
 
 ---
 
-## 🚀 Getting Started Locally
+## 🛠 Tech Stack
 
-To run the project locally, ensure you have Node.js installed, then follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone <your-repo-url>
-   cd ArtNexus
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Spin up the development server:**
-   ```bash
-   npm run dev
-   ```
-   > The app will typically be available at `http://localhost:8080`.
+* **Frontend:** React 18 + Vite
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Backend:** Supabase
+* **UI Components:** shadcn/ui (Radix Primitives)
+* **Animations:** Framer Motion
+* **Data Fetching:** TanStack React Query
+* **Charts:** Recharts
+* **Icons:** Lucide React
 
 ---
 
-## 🌍 Deployment Guide
+# 🚀 Getting Started
 
-This project is perfectly optimized to be deployed to highly scalable Edge networks for free!
+## 📌 Prerequisites
 
-### Option 1: Vercel (Recommended for Best Performance)
-1. Push this repository to your GitHub account.
-2. Log into [Vercel](https://vercel.com).
-3. Click **Add New Project** and select your `ArtNexus` repository.
-4. Vercel will automatically detect that you are using Vite!
-5. Leave the default settings (`Framework Preset: Vite`, `Build Command: npm run build`, `Output Directory: dist`) and click **Deploy**.
-
-### Option 2: Netlify
-1. Push this repository to your GitHub account.
-2. Log into [Netlify](https://netlify.com).
-3. Click **Add new site** -> **Import an existing project**.
-4. Authorize your GitHub and select the `ArtNexus` repo.
-5. Ensure the settings are:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-6. Click **Deploy site**.
+* Node.js ≥ 18
+* npm ≥ 8
+* Supabase account
 
 ---
 
-<<<<<<< HEAD
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) ≥ 18
-- [npm](https://www.npmjs.com/) ≥ 8
-- A free [Supabase](https://supabase.com/) account
-
-### 1. Clone & Install
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/ArtNexus.git
@@ -125,54 +80,80 @@ cd ArtNexus
 npm install
 ```
 
-### 2. Configure Environment Variables
+---
+
+## 2️⃣ Configure Environment Variables
+
+Create a `.env` file:
 
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` and add your Supabase credentials:
+Add your Supabase credentials:
 
 ```env
 VITE_SUPABASE_URL=https://your-project-id.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-public-key
 ```
 
-> Get these from: **Supabase Dashboard → Project Settings → API**
+Find them in:
+Supabase Dashboard → Project Settings → API
 
-### 3. Set Up Supabase Database
+---
 
-Open the **SQL Editor** in your Supabase dashboard and run:
+## 3️⃣ Database Setup (Supabase)
+
+Open **SQL Editor** in Supabase and run:
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE profiles (
   id UUID REFERENCES auth.users ON DELETE CASCADE PRIMARY KEY,
-  username TEXT, avatar_url TEXT, bio TEXT, location TEXT, website TEXT,
-  created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW()
+  username TEXT,
+  avatar_url TEXT,
+  bio TEXT,
+  location TEXT,
+  website TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TABLE artists (
   id UUID REFERENCES auth.users ON DELETE CASCADE PRIMARY KEY,
-  name TEXT NOT NULL, bio TEXT, location TEXT, photo TEXT,
-  verified BOOLEAN DEFAULT FALSE, created_at TIMESTAMPTZ DEFAULT NOW()
+  name TEXT NOT NULL,
+  bio TEXT,
+  location TEXT,
+  photo TEXT,
+  verified BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TABLE artworks (
   id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
   artist_id UUID REFERENCES artists(id) ON DELETE CASCADE,
-  title TEXT NOT NULL, description TEXT, image TEXT NOT NULL,
-  thumbnail TEXT, category TEXT[], price NUMERIC,
-  for_sale BOOLEAN DEFAULT FALSE, likes INTEGER DEFAULT 0, views INTEGER DEFAULT 0,
-  created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW()
+  title TEXT NOT NULL,
+  description TEXT,
+  image TEXT NOT NULL,
+  thumbnail TEXT,
+  category TEXT[],
+  price NUMERIC,
+  for_sale BOOLEAN DEFAULT FALSE,
+  likes INTEGER DEFAULT 0,
+  views INTEGER DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TABLE collections (
   id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
   user_id UUID REFERENCES auth.users ON DELETE CASCADE,
-  name TEXT NOT NULL, description TEXT, cover_image TEXT,
-  created_at TIMESTAMPTZ DEFAULT NOW(), updated_at TIMESTAMPTZ DEFAULT NOW()
+  name TEXT NOT NULL,
+  description TEXT,
+  cover_image TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TABLE collection_items (
@@ -183,92 +164,95 @@ CREATE TABLE collection_items (
 );
 ```
 
-### 4. Enable Supabase Auth & Storage
+---
 
-- **Auth:** Dashboard → Authentication → Enable **Email/Password**
-- **Storage:** Dashboard → Storage → Create bucket named `artworks` (Public)
+## 4️⃣ Enable Supabase Services
 
-### 5. Run the App
+* Enable **Email/Password Authentication**
+* Create public **Storage bucket** named `artworks`
+
+---
+
+## ▶️ Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:8080](http://localhost:8080) 🎉
+App runs at:
 
----
-
-## ☁️ Deployment
-
-### Netlify (Recommended — Free)
-
-1. Push this repo to GitHub
-2. Go to [netlify.com](https://netlify.com) → **Add new site** → **Import from Git**
-3. Set build settings:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-4. Add **Environment Variables** (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`)
-5. Click **Deploy** ✅
-
-> The `netlify.toml` in this repo auto-configures routing — no extra steps needed.
-
-### Vercel (Free)
-
-1. Go to [vercel.com](https://vercel.com) → **New Project** → Import your GitHub repo
-2. Vercel auto-detects Vite. Add the same two env vars
-3. Click **Deploy** ✅
-
-### Manual Build
-
-```bash
-npm run build       # Outputs to dist/
-npm run preview     # Preview locally before deploy
+```
+http://localhost:8080
 ```
 
 ---
 
-## 📜 Available Scripts
+# ☁️ Deployment
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start dev server at `localhost:8080` |
-| `npm run build` | Build for production → `dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint |
+## 🔹 Netlify (Recommended)
+
+1. Push project to GitHub
+2. Import into Netlify
+3. Build command: `npm run build`
+4. Publish directory: `dist`
+5. Add environment variables
+6. Deploy
 
 ---
-##Screenshots
-<img src="images_output/Art1.png" alt="ArtNexus Banner" width="100%"/>
-<img src="images_output/Art2.png" alt="ArtNexus Banner" width="100%"/>
-<img src="images_output/Art3.png" alt="ArtNexus Banner" width="100%"/>
-<img src="images_output/Art4.png" alt="ArtNexus Banner" width="100%"/>
-<img src="images_output/Art5.png" alt="ArtNexus Banner" width="100%"/>
-<img src="images_output/Art6.png" alt="ArtNexus Banner" width="100%"/>
-<img src="images_output/Art7.png" alt="ArtNexus Banner" width="100%"/>
 
-## 🤝 Contributing
+## 🔹 Vercel
 
-Contributions, issues and feature requests are welcome!  
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+1. Import GitHub repository
+2. Add environment variables
+3. Deploy
+
+---
+
+## 📦 Available Scripts
+
+| Command         | Description              |
+| --------------- | ------------------------ |
+| npm run dev     | Start development server |
+| npm run build   | Build for production     |
+| npm run preview | Preview production build |
+| npm run lint    | Run ESLint               |
+
+---
+
+# 🖼 Screenshots
+
+```
+/images_output/Art1.png
+/images_output/Art2.png
+/images_output/Art3.png
+/images_output/Art4.png
+/images_output/Art5.png
+/images_output/Art6.png
+/images_output/Art7.png
+```
+
+---
+
+# 🤝 Contributing
 
 1. Fork the project
-2. Create your branch: `git checkout -b feature/amazing-feature`
-3. Commit: `git commit -m 'feat: add amazing feature'`
-4. Push: `git push origin feature/amazing-feature`
+2. Create a feature branch
+3. Commit your changes
+4. Push branch
 5. Open a Pull Request
 
 ---
 
-## � License
+# 📄 License
 
-Distributed under the **MIT License**. See [LICENSE](LICENSE) for details.
+Distributed under the MIT License.
 
 ---
 
 <div align="center">
-  <strong>Built with ❤️ by <a href="https://github.com/DevrajOO7">DEVRAJ</a></strong><br/>
-  <sub>React · TypeScript · Vite · Supabase · TailwindCSS · WebXR</sub>
+  <strong>Built with ❤️ by DEVRAJ</strong><br/>
+  <sub>React · TypeScript · Vite · Supabase · Tailwind · WebXR</sub>
 </div>
-=======
-*Developed by DEVRAJ &copy; 2025*
->>>>>>> 8a71776 (Production ready release)
+
+---
+
