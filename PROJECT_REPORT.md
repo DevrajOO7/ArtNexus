@@ -168,4 +168,4 @@ Before pushing to production, verify:
 
 ---
 
-*Report generated: February 2026 | ArtNexus v1.0.0*
+*Report generated: March 2025 | ArtNexus v1.0.0*
