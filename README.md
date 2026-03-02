@@ -1,7 +1,7 @@
 
 ---
 
-# 🎨 ArtNexus
+# <img width="1920" height="1377" alt="image" src="https://github.com/user-attachments/assets/e088b72d-2003-43c1-a2a5-404c3b78fdc7" />ArtNexus
 
 **A Modern Art Discovery, Marketplace & Augmented Reality Platform**
 
@@ -186,37 +186,6 @@ http://localhost:8080
 
 ---
 
-# ☁️ Deployment
-
-## 🔹 Netlify (Recommended)
-
-1. Push project to GitHub
-2. Import into Netlify
-3. Build command: `npm run build`
-4. Publish directory: `dist`
-5. Add environment variables
-6. Deploy
-
----
-
-## 🔹 Vercel
-
-1. Import GitHub repository
-2. Add environment variables
-3. Deploy
-
----
-
-## 📦 Available Scripts
-
-| Command         | Description              |
-| --------------- | ------------------------ |
-| npm run dev     | Start development server |
-| npm run build   | Build for production     |
-| npm run preview | Preview production build |
-| npm run lint    | Run ESLint               |
-
----
 
 # 🖼 Screenshots
 
