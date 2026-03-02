@@ -1,7 +1,7 @@
 
 ---
 
-# <img width="100" height="200" alt="image" src="https://github.com/user-attachments/assets/e088b72d-2003-43c1-a2a5-404c3b78fdc7" />ArtNexus
+# <img width="50" height="60" alt="new" src="https://github.com/user-attachments/assets/258b9fc6-4d8a-4d81-9168-3bcc23173c8f" />ArtNexus
 
 **A Modern Art Discovery, Marketplace & Augmented Reality Platform**
 
